@@ -8,5 +8,8 @@ spring:
     name: service-order
   cloud:
     nacos:
-      discovery: #启用 spring cloud nacos discovery
         server-addr: 127.0.0.1:8848
+        discovery: #启用 spring cloud nacos discovery
+          username: nacos
+          password: nacos
+          namespace: public
