@@ -39,6 +39,8 @@ feign:
         # 连接超时时间
         connect-timeout: 5000
         # 请求处理超时时间
-        read-timeout: 3000
+        read-timeout: 5000
+        request-interceptors[0]:
+          com.alibaba.cloud.order.interceptor.feign.CustomFeignInterceptor
       service-stock:
         loggerLevel: HEADERS
