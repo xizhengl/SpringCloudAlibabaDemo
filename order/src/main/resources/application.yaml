@@ -35,5 +35,6 @@ feign:
     config:
       service-product:
         loggerLevel: HEADERS
+        contract: feign.Contract.Default
       service-stock:
         loggerLevel: HEADERS
