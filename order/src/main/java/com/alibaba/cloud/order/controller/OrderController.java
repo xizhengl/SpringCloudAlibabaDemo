@@ -1,5 +1,6 @@
 package com.alibaba.cloud.order.controller;
 
+import com.alibaba.cloud.order.feign.ProductFeignServe;
 import com.alibaba.cloud.order.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,14 @@ public class OrderController {
     @Autowired
     private StockFeignService stockFeignService;
 
+    @Autowired
+    private ProductFeignServe productFeignServe;
+
     @GetMapping("/add")
     public String addOrder(){
+        String p = productFeignServe.selectProduct(1);
         System.out.println("下单成功~");
-        String forObject = stockFeignService.deducted();
-        return "下单成功~" + forObject;
+        String s = stockFeignService.deducted();
+        return "下单成功~" + s + p;
     }
 }
