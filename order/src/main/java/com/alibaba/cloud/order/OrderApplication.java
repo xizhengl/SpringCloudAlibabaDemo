@@ -1,6 +1,6 @@
 package com.alibaba.cloud.order;
 
-import com.alibaba.cloud.ribbon.RibbonRandomRuleConfig;
+//import com.alibaba.cloud.ribbon.RibbonRandomRuleConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -14,11 +14,11 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableDiscoveryClient
 @EnableFeignClients
-@RibbonClients(
-        value = {
-                @RibbonClient(name = "service-stock", configuration = RibbonRandomRuleConfig.class)
-        }
-)
+//@RibbonClients(
+//        value = {
+//                @RibbonClient(name = "service-stock", configuration = RibbonRandomRuleConfig.class)
+//        }
+//)
 @SpringBootApplication
 public class OrderApplication {
 
