@@ -14,7 +14,8 @@ public class ProductController {
     String port;
 
     @GetMapping("/{id}")
-    public String selectProduct(@PathVariable Integer id){
+    public String selectProduct(@PathVariable Integer id) throws InterruptedException {
+        Thread.sleep(4000);
         System.out.println("查询商品" + id);
         return "查询商品" + id + ":" + port;
     }

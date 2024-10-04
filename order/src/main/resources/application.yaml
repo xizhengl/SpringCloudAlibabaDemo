@@ -36,5 +36,9 @@ feign:
       service-product:
         loggerLevel: HEADERS
         contract: feign.Contract.Default
+        # 连接超时时间
+        connect-timeout: 5000
+        # 请求处理超时时间
+        read-timeout: 3000
       service-stock:
         loggerLevel: HEADERS
