@@ -17,11 +17,23 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-service-stock:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.rule.CustomRule
-ribbon:
-  eager-load:
-#    开启ribbon 饥饿加载
-    enabled: true
-    clients: service-stock
+#service-stock:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.rule.CustomRule
+#ribbon:
+#  eager-load:
+##    开启ribbon 饥饿加载
+#    enabled: true
+#    clients: service-stock
+
+logging:
+  level:
+    com.alibaba.cloud.order.feign: debug
+# feign日志局部配置
+feign:
+  client:
+    config:
+      service-product:
+        loggerLevel: HEADERS
+      service-stock:
+        loggerLevel: HEADERS
