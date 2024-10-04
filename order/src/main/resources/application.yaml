@@ -16,4 +16,9 @@ spring:
           ephemeral: false
 service-stock:
   ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.rule.CustomRule
+ribbon:
+  eager-load:
+#    开启ribbon 饥饿加载
+    enabled: true
+    clients: service-stock
