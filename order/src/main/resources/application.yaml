@@ -14,3 +14,6 @@ spring:
           password: nacos
           namespace: public
           ephemeral: false
+service-stock:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
