@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: com.demo.redis
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+#      config:
+#        namespace: public
+      # 一旦修改了配置文件的格式就需要配置
+      config:
+        file-extension: yaml
+        namespace: 2c1b9bba-f026-4652-b1c6-00c3a8b46000
+    loadbalancer:
+      ribbon:
+        enabled: false
